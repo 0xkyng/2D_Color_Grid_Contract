@@ -30,7 +30,7 @@ contract ColorGrid{
  }
 
  function getColor(uint x, uint y) public view returns (uint){
-     require((x < 7) && (y < 5));
+     require((x <= 7) && (y <= 5));
      return cells[x][y];
  }
 
