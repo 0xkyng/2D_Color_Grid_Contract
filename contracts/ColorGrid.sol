@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-contract CellBoard{
+contract ColorGrid{
     
  mapping(uint => mapping(uint => uint)) cells;
 
@@ -11,17 +11,18 @@ contract CellBoard{
      for(uint x = 0; x < 7; x++){
          for(uint y = 0; y < 5; y++){
              randNonce++;
+             uint seed = uint(keccak256(abi.encodePacked(block.timestamp,msg.sender,randNonce))) % 4;
              if(( x % 2 == 0 ) && ( y % 2 == 0 )){
-                 cells[x][y] = uint(keccak256(abi.encodePacked(block.timestamp,msg.sender,randNonce))) % 4;
+                 cells[x][y] = seed;
              }
              if(( x % 2 == 0 ) && ( y % 2 == 1 )){
-                 cells[x][y] = uint(keccak256(abi.encodePacked(block.timestamp,msg.sender,randNonce))) % 4;
+                 cells[x][y] = seed;
              }
              if(( x % 2 == 1 ) && ( y % 2 == 0 )){
-                 cells[x][y] = uint(keccak256(abi.encodePacked(block.timestamp,msg.sender,randNonce))) % 4;
+                 cells[x][y] = seed;
              }
              if(( x % 2 == 1 ) && ( y % 2 == 1 )){
-                 cells[x][y] = uint(keccak256(abi.encodePacked(block.timestamp,msg.sender,randNonce))) % 4;
+                 cells[x][y] = seed;
              }
          }  
      }
