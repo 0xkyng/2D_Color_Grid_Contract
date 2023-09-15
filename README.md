@@ -76,6 +76,7 @@ ColorGrid.setColors();
 
 // Query the color of a specific cell
 uint color = ColorGrid.getColor(2, 3);
+```
 
 ### Development
 
