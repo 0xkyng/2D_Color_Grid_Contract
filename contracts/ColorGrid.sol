@@ -8,10 +8,10 @@ contract ColorGrid{
  uint randNonce = 0;
 
  function setColors() public {
-     for(uint x = 0; x < 7; x++){
-         for(uint y = 0; y < 5; y++){
+     uint seed = uint(keccak256(abi.encodePacked(block.timestamp,msg.sender,randNonce))) % 4;
+     for(uint x = 1; x < 6; x++){
+         for(uint y = 1; y < 8; y++){
              randNonce++;
-             uint seed = uint(keccak256(abi.encodePacked(block.timestamp,msg.sender,randNonce))) % 4;
              if(( x % 2 == 0 ) && ( y % 2 == 0 )){
                  cells[x][y] = seed;
              }

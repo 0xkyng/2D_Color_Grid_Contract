@@ -2,13 +2,14 @@
 import { ethers } from "hardhat";
 
 async function main() {
-    const colorGridCA = "0x6a669552760Fec8f77f936d8d530236FF02C8f1A"
+    const colorGridCA = "0x7de1e6ae6d54F747CaCF92957954c306DCeABfd1"
     const colorGrid = await ethers.getContractAt("IColorGrid", colorGridCA)
 
 
     await colorGrid.setColors();
 
-    const num = await colorGrid.getColor(2,4)
+
+    const num = await colorGrid.getColor(4,5)
 
     console.log(Number(num))
 
@@ -16,7 +17,7 @@ async function main() {
 
 }
 
-// 0x6a669552760Fec8f77f936d8d530236FF02C8f1A
+// 0xB02986E8CBD5E4f5F6F44284F705cB2B571947fa
 
 main().catch((error) => {
   console.error(error);
