@@ -2,7 +2,7 @@
 import { ethers } from "hardhat";
 
 async function main() {
-    const colorGridCA = "0x1c5f9308aa0ceeEf9646f7baD0421239727567a4"
+    const colorGridCA = "0x37f71e3E5244DD909658CeE5E3AA0516A66EC584"
     const colorGrid = await ethers.getContractAt("IColorGrid", colorGridCA)
 
 
