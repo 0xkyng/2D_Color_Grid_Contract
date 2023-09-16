@@ -7,7 +7,7 @@ contract ColorGrid{
 
  uint randNonce = 0;
 
- function setColors() public {
+ constructor() {
      uint seed = uint(keccak256(abi.encodePacked(block.timestamp,msg.sender,randNonce))) % 4;
      for(uint x = 1; x < 6; x++){
          for(uint y = 1; y < 8; y++){
